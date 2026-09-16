@@ -151,16 +151,15 @@ Nous avons créé un niveau de jeu d'horreur en réalité virtuelle qui permetta
 
 Mon projet **Antrum** a débuté après une session de brainstorming avec mon équipe. Nous voulions créer une œuvre originale inspirée par le genre « analog horror » et l'œuvre *Don't Hug Me I'm Scared* : un univers inquiétant qui se cachait derrière une présentation « innocente ».
 
-![Identité visuelle](assets/moodboard.png)
+<img src="assets/antrum_tournage3.jpg" width="400">
 
 Notre défi principal était de créer un contraste cohérent entre nos séquences stop-motion et notre séquence vidéo normale qui puisse générer la peur. On a jumelé un style VHS avec le genre du « found footage » pour créer un tout cohérent et inquiétant.
 
-<!-- Insérer une image ici -->
+<img src="assets/antrum_tournage2.jpg" width="400">
 
 Notre décor était notamment très important. Nous avons créé de toutes pièces un décor avec les ressources à notre disposition afin de créer notre ambiance et notre univers.
 
-<!-- Insérer une image ici -->
+<img src="assets/antrum_tournage1.jpg" width="400">
 
 On a fini par faire un travail énorme au niveau de ce qu'on voulait raconter. On a réfléchi aux moindres détails de chaque scène, plan et élément du décor. On a organisé notre tournage sur trois jours. Tout était préparé parfaitement d'avance, ce qui a fait que notre tournage s'est déroulé de manière fluide, mais aussi efficace.
 
-<!-- Insérer une image ici -->
