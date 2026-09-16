@@ -163,3 +163,5 @@ Notre décor était notamment très important. Nous avons créé de toutes pièc
 
 On a fini par faire un travail énorme au niveau de ce qu'on voulait raconter. On a réfléchi aux moindres détails de chaque scène, plan et élément du décor. On a organisé notre tournage sur trois jours. Tout était préparé parfaitement d'avance, ce qui a fait que notre tournage s'est déroulé de manière fluide, mais aussi efficace.
 
+<img src="assets/antrum_instal.png" width="600">
+
