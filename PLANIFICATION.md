@@ -6,7 +6,7 @@
 
 ## Identité visuelle
 
-![Identité visuelle](assets/identite-visuelle.png)
+![Identité visuelle](assets/moodboard.png)
 
 ## Compétences
 
