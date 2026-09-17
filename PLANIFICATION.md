@@ -165,3 +165,8 @@ On a fini par faire un travail énorme au niveau de ce qu'on voulait raconter. O
 
 <img src="assets/antrum_instal.png" width="600">
 
+---
+
+## Hébergement
+
+Je compte héberger mon site sur Github pages.
