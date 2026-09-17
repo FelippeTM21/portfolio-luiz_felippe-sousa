@@ -132,6 +132,7 @@ Pour ce projet, j'ai appris à travailler avec le logiciel Max pour créer un un
 **Votre ou vos rôle(s) dans le projet :** Générale : Concepteur/artiste son, programmeur, scénariste  
 **Logiciels ou techniques utilisés :** Unity, Maya, VS Code  
 **Catégorie du projet :** Court métrage vidéo.
+**Documentation du projet:** https://github.com/FelippeTM21/pablo_felippe_mateo_projet-final_582-401
 
 #### Description courte du projet
 
