@@ -172,9 +172,11 @@ Un fichier JSON local
 
 ## Animations
 
-J'aimerais essayer du GSAP pour ce projet.
+J'aimerais essayer du GSAP pour ce projet, pour explorer autre chose et apprendre la librairie.
 Je veux faire l'effet parallax sur mon site, ou le background bouge au scroll.
 Je veux que rendu a la section de mes compétences, le scroll va horizontalement plûtot que verticalement.
+Sur chaque bouton avec un flèche, je veux que au hover le bouton se remplisse en noir (ou mauve, a voir) et le texte change a la couleur du background.
+Je veux animer les trombones dans mon design. J'ai deux choix, sois le trombone tombe au hover, sois l'utilisateur peux prendre le trombone et l'image tombe hors de l'écran. 
 
 ## Structure de navigation
 
