@@ -166,6 +166,19 @@ On a fini par faire un travail énorme au niveau de ce qu'on voulait raconter. O
 <img src="assets/antrum_instal.png" width="600">
 
 ---
+## Gestion des données
+
+Un fichier JSON local
+
+## Animations
+
+J'aimerais essayer du GSAP pour ce projet.
+Je veux faire l'effet parallax sur mon site, ou le background bouge au scroll.
+Je veux que rendu a la section de mes compétences, le scroll va horizontalement plûtot que verticalement.
+
+## Structure de navigation
+
+Je veux faire un one pager avec pop up au niveau de me projets.
 
 ## Hébergement
 
