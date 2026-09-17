@@ -50,7 +50,7 @@ Mettre en valeur ma créativité et mes idées à travers des créations multim�
 **Individuel ou en équipe :** Équipe  
 **Nom de vos coéquipiers :** Mateo Rodriguez Fontaine, Pablo Pereira  
 **Votre ou vos rôle(s) dans le projet :** Générale : Concepteur/artiste son, monteur, cameraman, éclairagiste.  
-**Logiciels ou techniques utilisés :** Stop-motion avec Dragonframe, montage avec DaVinci Resolve, conception sonore avec FL Studio  
+**Logiciels ou techniques utilisés :** Stop-motion avec Dragonframe, montage avec DaVinci Resolve, conception sonore + montage audio avec FL Studio  
 **Catégorie du projet :** Court métrage vidéo.
 
 #### Description courte du projet
