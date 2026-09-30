@@ -196,6 +196,21 @@ a {
   overflow: auto;
 }
 
+/* 4 sections, scrolltrigger epingle et deplace */
+
+.stage {
+  height: 100svh;
+  position: relative;
+}
+
+.track {
+  position: relative;
+  isolation: isolate;
+  width: 400vw;
+  height: 100%;
+  display: flex;
+  will-change: transform;
+}
 
 /* dégradé qui rentre dans a propos */
 .track::before {
@@ -522,11 +537,60 @@ a {
   pointer-events: none;
 }
 
+.project-card__image--antrum .antrum-wordmark {
+  position: relative;
+  z-index: 1;
+  font-family: var(--display);
+  font-size: clamp(2rem,4vw,4rem);
+  line-height: .8;
+  text-align: center;
+  text-shadow: 2px 3px 3px #000;
+}
+
+/* Cette ancienne capture est recadrée uniquement tant que tu ne l’as pas remplacée. */
+.project-card__photo[src$="a-remplacer--antrum.png"] {
+  inset: auto;
+  left: -1228px;
+  top: -116px;
+  width: 1928px;
+  height: 565px;
+  max-width: none;
+  object-fit: fill;
+}
+
 .project-card__image--antrum small {
   font: .6rem var(--mono);
   letter-spacing: .05em;
 }
 
+/* La mention temporaire disparaît automatiquement quand le src change. */
+.asset-note {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: none;
+  padding: .45rem .65rem;
+  background: rgba(214,210,198,.97);
+  border-top: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: clamp(.68rem,.85vw,.8rem);
+  line-height: 1.35;
+  text-align: left;
+}
+
+.project-card__photo[src$="a-remplacer--antrum.png"]~.asset-note,.skill-image__photo[src$="a-remplacer--video.png"]~.asset-note {
+  display: block;
+}
+
+.project-card__image--pending {
+  background: repeating-linear-gradient(35deg,#c4c1b8 0 1px,transparent 1px 14px),linear-gradient(135deg,#a9a9a7,#d7d5ce);
+  color: #555;
+  font-family: var(--mono);
+  font-size: .85rem;
+  text-align: center;
+}
 
 .project-card__number {
   font-size: .75rem;
@@ -556,7 +620,8 @@ a {
   font-size: .78rem;
 }
 
-/* compétences */
+/* Compétences : les vrais bords des fiches restent visibles en bas. */
+/* ===== 08 — Compétences et image vidéo ===== */
 .skills {
   isolation: isolate;
 }
@@ -579,7 +644,7 @@ a {
   box-shadow: 0 -4px 12px #0001;
 }
 
-/* onglets en bas */
+/* 12, 9, 6 et 3 rem : les 4 onglets sont déjà là avant de défiler. */
 .skill-card--stack:nth-of-type(2) {
   top: calc(100% - 12rem);
   z-index: 2;
@@ -670,6 +735,17 @@ a {
   object-fit: cover;
 }
 
+/* Même idée pour la capture vidéo : ton vrai fichier prend toute la case automatiquement. */
+.skill-image__photo[src$="a-remplacer--video.png"] {
+  inset: auto;
+  left: -244px;
+  top: -320px;
+  width: 1251px;
+  height: 898px;
+  max-width: none;
+  object-fit: fill;
+}
+
 .skill-card__desc,.skill-card__empty {
   font-size: clamp(1rem,1.4vw,1.2rem);
   line-height: 1.5;
@@ -685,7 +761,7 @@ a {
   pointer-events: none;
 }
 
-/* footer */
+/* ===== 09 — Pied de page ===== */
 .end-note {
   min-height: 32svh;
   padding: 5rem 8%;
@@ -704,8 +780,8 @@ a {
   font: inherit;
 }
 
-/* ouverture du dossier sur tt */
-
+/* Les dossiers s’ouvrent au-dessus de tout ; script.js gère le clavier. */
+/* ===== 10 — Dossiers plein écran ===== */
 .detail {
   position: fixed;
   inset: 0;
@@ -762,7 +838,7 @@ a {
   font-size: .85rem;
 }
 
-/* anim sans gsap */
+/* ===== 11 — Mode sans GSAP / animations réduites ===== */
 .no-js .stage,.no-gsap .stage {
   height: auto;
 }
@@ -791,7 +867,7 @@ a {
   min-height: 110svh;
 }
 
-/* si gsap ne load pas  */
+/* Lecture normale si GSAP est absent ou si les animations sont réduites. */
 .no-gsap .skills,.no-js .skills {
   height: auto;
   min-height: 0;
@@ -813,9 +889,235 @@ a {
   padding: 3rem 0 5rem;
 }
 
+/* ===== 12 — Téléphone et tablette (760 px et moins) ===== */
+@media(max-width:760px) {
+  :root {
+    --tab: 2.65rem;
+  }
+
+  .stage {
+    height: auto;
+  }
+
+  .track {
+    display: block;
+    width: 100%;
+    will-change: auto;
+  }
+
+  .track::before {
+    width: 100vw;
+    height: 115svh;
+    background: radial-gradient(ellipse 100vw 110svh at 50vw 0,#473b8b 0 45%,rgba(71,59,139,.75) 65%,rgba(71,59,139,0) 88%);
+  }
+
+  .panel {
+    height: auto;
+    min-height: 100svh;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .hero {
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .hero__top {
+    left: 6%;
+    right: 6%;
+    top: 6%;
+  }
+
+  .hero__center {
+    top: 27%;
+    max-width: 88vw;
+  }
+
+  .hero h1 {
+    font-size: clamp(5.4rem,21vw,12rem);
+  }
+
+  .hero__eyebrow {
+    font-size: .65rem;
+  }
+
+  .hero__bottom {
+    width: 65%;
+    min-width: 0;
+    left: 18%;
+    bottom: 11%;
+  }
+
+  .about__body {
+    width: 88%;
+    padding: 4.5rem 0 4rem;
+  }
+
+  .about h2,.projects h2 {
+    font-size: clamp(5rem,17vw,8rem);
+  }
+
+  .about__grid {
+    grid-template-columns: minmax(110px,30%) 1fr;
+    gap: 1rem;
+  }
+
+  .about__evidence {
+    height: min(55svh, 480px);
+    max-height: 55svh;
+  }
+
+  .about__text {
+    font-size: .83rem;
+  }
+
+  .about__links {
+    gap: .55rem;
+    margin-top: 1rem;
+  }
+
+  .line-button {
+    font-size: .72rem;
+  }
+
+  .arrow {
+    width: 22%;
+    min-width: 25px;
+  }
+
+  .projects__inner {
+    width: 86%;
+    padding: 4.5rem 0 5rem;
+    transform: none!important;
+  }
+
+  .project-list {
+    gap: 3rem;
+  }
+
+  .project-card {
+    gap: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: clamp(2.7rem,10vw,4.5rem);
+  }
+
+  .skills {
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  /* Les quatre onglets tiennent dans la hauteur du téléphone. */
+  .skill-card--stack:nth-of-type(2) { top: calc(100% - 10.6rem); }
+  .skill-card--stack:nth-of-type(3) { top: calc(100% - 7.95rem); }
+  .skill-card--stack:nth-of-type(4) { top: calc(100% - 5.3rem); }
+  .skill-card--stack:nth-of-type(5) { top: calc(100% - 2.65rem); }
+
+  .skill-card__content {
+    width: 80%;
+    padding-top: 9svh;
+  }
+
+  .skill-card--stack .skill-card__content {
+    padding-top: 4svh;
+  }
+
+  .skill-card h2 {
+    font-size: clamp(5rem,15vw,8rem);
+  }
+
+  .skill-card__grid {
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-image__photo[src$="a-remplacer--video.png"] {
+    left: -195px;
+    top: -255px;
+    width: 1000px;
+    height: 718px;
+  }
+
+  .skill-card__desc {
+    font-size: .85rem;
+  }
+
+  .end-note {
+    display: block;
+    min-height: 18rem;
+  }
+
+  .end-note>* {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .panel-index {
+    right: 1rem;
+    bottom: .5rem;
+  }
+
+  .detail__body {
+    width: 95%;
+  }
+
+  .detail h2 {
+    font-size: clamp(5rem,20vw,9rem);
+  }
 
 
+}
 
+/* ===== 13 — Petits téléphones (480 px et moins) ===== */
+@media(max-width:480px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__evidence {
+    height: 26rem;
+    width: min(65vw,230px);
+  }
+
+  .about__text {
+    font-size: .92rem;
+  }
+
+  .project-card {
+    grid-template-columns: 38% 1fr;
+    gap: .75rem;
+  }
+
+  .project-card__info>p:last-child {
+    font-size: .75rem;
+  }
+
+  .project-card__number {
+    font-size: .65rem;
+  }
+
+  .skill-card__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-card__desc {
+    font-size: .76rem;
+  }
+
+  .skill-card__tab {
+    padding-left: 10%;
+  }
+
+  .intro__content {
+    width: 86%;
+  }
+
+
+}
+
+/* ===== 14 — Préférence de mouvement réduit ===== */
 @media(prefers-reduced-motion:reduce) {
   html {
     scroll-behavior: auto;
@@ -832,20 +1134,5 @@ a {
   .line-button::before,.skill-card__tab {
     transition: none;
   }
-  /* 4 sections, scrolltrigger epingle et deplace */
-
-.stage {
-  height: 100svh;
-  position: relative;
-}
-
-.track {
-  position: relative;
-  isolation: isolate;
-  width: 400vw;
-  height: 100%;
-  display: flex;
-  will-change: transform;
-}
 
 }
