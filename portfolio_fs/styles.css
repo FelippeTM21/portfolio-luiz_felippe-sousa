@@ -460,6 +460,392 @@ a {
   height: 100%;
 }
 
+/* les porjets */
+.projects__inner {
+  width: min(72vw,750px);
+  margin: auto;
+  padding: 7svh 0 13svh;
+  will-change: transform;
+}
 
+.projects h2 {
+  margin-bottom: .25rem;
+}
+
+.projects__count {
+  font-size: .78rem;
+  border-top: 1px solid #333;
+  padding-top: .7rem;
+  margin-bottom: 3rem;
+}
+
+.project-list {
+  display: grid;
+  gap: 3.7rem;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  gap: 1.2rem 2.5rem;
+  align-items: start;
+}
+
+.project-card__image {
+  position: relative;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  border: 1px solid #333;
+  box-shadow: 5px 6px 0 #0002;
+  overflow: hidden;
+}
+
+.project-card__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card__image--antrum {
+  background: var(--ink);
+  color: #eee;
+}
+
+.project-card__image--antrum::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,#000a,#0005);
+  pointer-events: none;
+}
+
+.project-card__image--antrum small {
+  font: .6rem var(--mono);
+  letter-spacing: .05em;
+}
+
+
+.project-card__number {
+  font-size: .75rem;
+  margin-bottom: .8rem;
+}
+
+.project-card h3 {
+  font-size: clamp(3rem,5.5vw,6rem);
+  line-height: .9;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.project-card__info>p:last-child {
+  font-size: clamp(.85rem,1.2vw,1rem);
+  line-height: 1.5;
+  max-width: 29ch;
+}
+
+.project-card .line-button {
+  grid-column: 1/-1;
+}
+
+.projects__end {
+  margin: 5rem 0 0;
+  text-align: center;
+  font-size: .78rem;
+}
+
+/* compétences */
+.skills {
+  isolation: isolate;
+}
+
+.skill-card {
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid #111;
+  overflow: hidden;
+}
+
+.skill-card--base {
+  z-index: 0;
+  border: 0;
+}
+
+.skill-card--stack {
+  bottom: auto;
+  height: 100%;
+  box-shadow: 0 -4px 12px #0001;
+}
+
+/* onglets en bas */
+.skill-card--stack:nth-of-type(2) {
+  top: calc(100% - 12rem);
+  z-index: 2;
+}
+
+.skill-card--stack:nth-of-type(3) {
+  top: calc(100% - 9rem);
+  z-index: 3;
+}
+
+.skill-card--stack:nth-of-type(4) {
+  top: calc(100% - 6rem);
+  z-index: 4;
+}
+
+.skill-card--stack:nth-of-type(5) {
+  top: calc(100% - 3rem);
+  z-index: 5;
+}
+
+.skill-card__tab {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  height: var(--tab);
+  display: flex;
+  align-items: center;
+  padding-left: max(8vw,calc(50vw - 450px));
+  font-size: clamp(.86rem,1.3vw,1.05rem);
+  transition: transform .25s,background .25s,box-shadow .25s;
+}
+
+.skill-card__tab:hover,.skill-card__tab:focus-visible {
+  transform: translateY(-6px);
+  background: #c8c2db;
+  box-shadow: 0 6px 9px #0002;
+}
+
+.skill-card__content {
+  width: min(72vw,900px);
+  margin: 0 auto;
+  padding-top: 8svh;
+}
+
+.skill-card--stack .skill-card__content {
+  padding-top: 5svh;
+}
+
+.skill-card h2 {
+  font-weight: 400;
+  font-size: clamp(5rem,9vw,9rem);
+  line-height: .9;
+  margin: 1.25rem 0 .4rem;
+}
+
+.skill-card__fraction {
+  font-size: clamp(1.4rem,2vw,2rem);
+}
+
+.skill-card__grid {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  gap: clamp(2rem,8vw,9rem);
+  align-items: start;
+  margin-top: 4svh;
+}
+
+.skill-image {
+  position: relative;
+  width: min(100%,350px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid #888;
+  box-shadow: 6px 8px 0 #0002;
+}
+
+.skill-image__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.skill-card__desc,.skill-card__empty {
+  font-size: clamp(1rem,1.4vw,1.2rem);
+  line-height: 1.5;
+}
+
+.skill-card__empty {
+  margin-top: 5rem;
+  max-width: 28ch;
+}
+
+.skills>.panel-index {
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* footer */
+.end-note {
+  min-height: 32svh;
+  padding: 5rem 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid #111;
+  font-size: .85rem;
+}
+
+.end-note button {
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  font: inherit;
+}
+
+/* ouverture du dossier sur tt */
+
+.detail {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: var(--purple);
+  color: var(--paper);
+  transform: translateX(-101%);
+  visibility: hidden;
+  overflow-y: auto;
+  padding: clamp(1.3rem,5vw,5rem);
+}
+
+.detail__top,.detail__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: .83rem;
+}
+
+.detail__close {
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: .55rem .8rem;
+  font: inherit;
+}
+
+.detail__body {
+  width: min(80%,820px);
+  margin: 6svh auto 7svh;
+}
+
+.detail h2 {
+  font-size: clamp(6rem,16vw,16rem);
+  line-height: .9;
+  font-weight: 400;
+  margin: 1rem 0 2rem;
+}
+
+.detail__body>p#detail-text {
+  font-size: clamp(1rem,1.6vw,1.3rem);
+  line-height: 1.55;
+  max-width: 47ch;
+}
+
+.detail__frame {
+  margin-top: 3.5rem;
+  border: 1px solid #d6d2c6;
+  height: 30svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  font-size: .85rem;
+}
+
+/* anim sans gsap */
+.no-js .stage,.no-gsap .stage {
+  height: auto;
+}
+
+.no-js .track,.no-gsap .track {
+  display: block;
+  width: 100%;
+  transform: none!important;
+}
+
+.no-js .panel,.no-gsap .panel {
+  height: auto;
+  min-height: 100svh;
+}
+
+.no-js .hero,.no-gsap .hero {
+  height: 100svh;
+  transform: none;
+}
+
+.no-js .projects__inner,.no-gsap .projects__inner {
+  transform: none!important;
+}
+
+.no-js .skills,.no-gsap .skills {
+  min-height: 110svh;
+}
+
+/* si gsap ne load pas  */
+.no-gsap .skills,.no-js .skills {
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+.no-gsap .skill-card,.no-js .skill-card {
+  position: relative;
+  top: auto!important;
+  min-height: 72svh;
+}
+
+.no-gsap .skill-card__tab,.no-js .skill-card__tab {
+  height: auto;
+  padding: 1rem 8%;
+}
+
+.no-gsap .skill-card__content,.no-js .skill-card__content {
+  padding: 3rem 0 5rem;
+}
+
+
+
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .enter-sheet {
+    transform: none;
+  }
+
+  .intro {
+    display: none;
+  }
+
+  .line-button::before,.skill-card__tab {
+    transition: none;
+  }
+  /* 4 sections, scrolltrigger epingle et deplace */
+
+.stage {
+  height: 100svh;
+  position: relative;
+}
+
+.track {
+  position: relative;
+  isolation: isolate;
+  width: 400vw;
+  height: 100%;
+  display: flex;
+  will-change: transform;
+}
 
 }
