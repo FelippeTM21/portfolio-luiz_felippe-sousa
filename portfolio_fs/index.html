@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#D6D2C6">
+  <meta name="description" content="Portfolio de Felippe Sousa — vidéo, création numérique et projets multimédias.">
+  <title>Felippe Sousa — Portfolio</title>
+  <link rel="preload" href="assets/league-gothic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script defer src="assets/gsap.min.js"></script>
+  <script defer src="assets/ScrollTrigger.min.js"></script>
+  <script defer src="script.js?v=4"></script>
+</head>
+<body class="is-intro">
+  <a class="skip-link" href="#about">Aller au contenu</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="intro" class="intro" aria-label="Chargement de l'archive">
+    <div class="intro__content mono">
+      <div class="intro__log" aria-hidden="true">
+        <p class="terminal-line">&gt; initialisation de l’archive sécurisée...</p>
+        <p class="terminal-line">&gt; établissement de la connexion chiffrée...</p>
+        <p class="terminal-line">&gt; nœud : MTL-07</p>
+        <p class="terminal-line">&gt; vérification du niveau d’autorisation...</p>
+        <p class="terminal-line">&gt; niveau d’accès : ████</p>
+        <p class="terminal-line">&gt; chargement des dossiers du sujet...</p>
+      </div>
+      <div class="intro__bar" aria-hidden="true"><span></span></div>
+      <p class="intro__percent" aria-hidden="true">00 %</p>
+      <p class="intro__warning">AVERTISSEMENT :<br>Tout accès non autorisé à ces fichiers est interdit.</p>
+      <p class="intro__identity">SUJET : FELIPPE SOUSA<br>STATUT : ACTIF<br>DOSSIER : 04-21-<span class="block"></span></p>
+      <p class="intro__ready">&gt; montage de l’archive...<br>&gt; ACCÈS AUTORISÉ</p>
+    </div>
+    <button class="intro__skip mono" type="button">passer l’intro →</button>
+  </div>
+
+  <main id="archive">
+    <div class="stage" id="stage">
+      <div class="track" id="track">
+        <section class="panel hero enter-sheet" id="home" aria-labelledby="hero-title">
+          <header class="hero__top"><button type="button" class="text-link" data-go="projects">projets</button><span>felippe sousa</span></header>
+          <div class="hero__center">
+            <p class="hero__eyebrow mono">DOSSIER 04-21 / PORTFOLIO</p>
+            <h1 id="hero-title">PORTFOLIO</h1>
+          </div>
+          <div class="hero__bottom">
+            <button class="archive-link line-button mono" type="button" data-go="about"><span>voir <em>dossier</em></span><span class="arrow" aria-hidden="true"></span></button>
+          </div>
+          <span class="panel-index mono">00 / 03</span>
+        </section>
+
+        <section class="panel about" id="about" aria-labelledby="about-title">
+          <div class="about__body">
+            <p class="subject mono">sujet n1</p>
+            <h2 id="about-title">À <span>PROPOS</span></h2>
+            <div class="about__grid">
+              <div class="about__evidence">
+                <div class="evidence-slot evidence-slot--profile"><img src="assets/images/profil.png"></div>
+                <div class="evidence-slot evidence-slot--barcode"><img src="assets/images/code_barre.png"></div>
+                <div class="evidence-slot evidence-slot--fingerprint"><img src="assets/images/empreinte.png"></div>
+              </div>
+              <div class="about__text mono">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at hendrerit tortor. Donec id tempus magna. Etiam eget tellus efficitur.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at hendrerit tortor. Donec id tempus.</p>
+                <div class="about__links">
+                  <button class="line-button" type="button" data-go="projects"><span>voir les <em>projets</em></span><span class="arrow" aria-hidden="true"></span></button>
+                  <button class="line-button" type="button" data-go="skills"><span>mes <em>compétences</em></span><span class="arrow" aria-hidden="true"></span></button>
+                  <button class="line-button" type="button" data-open="contact"><span>contact</span><span class="arrow" aria-hidden="true"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="panel-index mono">01 / 03</span>
+        </section>
+
+        <section class="panel projects" id="projects" aria-labelledby="projects-title">
+          <div class="projects__inner" id="projects-inner">
+            <p class="subject mono">sujet n2</p>
+            <h2 id="projects-title"><span>PROJETS</h2>
+            <p class="projects__count mono">ARCHIVE / 03 DOSSIERS</p>
+            <div class="project-list">
+              <article class="project-card">
+                <div class="project-card__image project-card__image--antrum"><img class="project-card__photo" src="assets/images/ANTRUM.png"></div>
+                <div class="project-card__info"><p class="mono project-card__number">01 / COURT MÉTRAGE</p><h3>ANTRUM</h3><p class="mono">Une fiction inquiétante mêlant stop motion, image VHS et found footage.</p></div>
+                <button class="line-button mono" type="button" data-open="antrum"><span>voir le projet</span><span class="arrow" aria-hidden="true"></span></button>
+              </article>
+              <article class="project-card">
+                <div class="project-card__image project-card__image--pending"><img class="project-card__photo" src="assets/images/projet_non_specifier.png"></div>
+                <div class="project-card__info"><p class="mono project-card__number">02 / DOSSIER À COMPLÉTER</p><h3>PROJET 02</h3><p class="mono">> Lorem ipsum dolor sit amet.> Lorem ipsum dolor sit amet.> Lorem ipsum</p></div>
+                <button class="line-button mono" type="button" data-open="project-02"><span>voir le projet</span><span class="arrow" aria-hidden="true"></span></button>
+              </article>
+              <article class="project-card">
+                <div class="project-card__image project-card__image--pending"><img class="project-card__photo" src="assets/images/projet_non_specifier.png"></div>
+                <div class="project-card__info"><p class="mono project-card__number">03 / DOSSIER À COMPLÉTER</p><h3>PROJET 03</h3><p class="mono">> Lorem ipsum dolor sit amet.> Lorem ipsum dolor sit amet.> Lorem ipsum</p></div>
+                <button class="line-button mono" type="button" data-open="project-03"><span>voir le projet</span><span class="arrow" aria-hidden="true"></span></button>
+              </article>
+            </div>
+            <p class="projects__end mono">FIN DES DOSSIERS / DÉFILER POUR LES COMPÉTENCES ↓</p>
+          </div>
+          <span class="panel-index mono">02 / 03</span>
+        </section>
+
+        <section class="panel skills" id="skills" aria-label="Compétences">
+          <article class="skill-card skill-card--base" aria-labelledby="video-title">
+            <div class="skill-card__content">
+              <p class="subject mono">sujet n3</p><h2 id="video-title">VIDEO</h2><p class="skill-card__fraction">1/5</p>
+              <div class="skill-card__grid"><div class="skill-image"><img class="skill-image__photo" src="assets/images/projet_non_specifier.png"></div><p class="mono skill-card__desc">Reste a definir encore prcq aaaaaaaaaaa.</p></div>
+            </div>
+          </article>
+          <article class="skill-card skill-card--stack" aria-label="Sujet numéro quatre"><button class="skill-card__tab mono" type="button">sujet n4</button><div class="skill-card__content"><p class="subject mono">sujet n4</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">2/5</p><p class="mono skill-card__empty">Reste a definir encore prcq aaaaaaaaaaa.</p></div></article>
+          <article class="skill-card skill-card--stack" aria-label="Sujet numéro cinq"><button class="skill-card__tab mono" type="button">sujet n5</button><div class="skill-card__content"><p class="subject mono">sujet n5</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">3/5</p><p class="mono skill-card__empty">Reste a definir encore prcq aaaaaaaaaaa.</p></div></article>
+          <article class="skill-card skill-card--stack" aria-label="Sujet numéro six"><button class="skill-card__tab mono" type="button">sujet n6</button><div class="skill-card__content"><p class="subject mono">sujet n6</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">4/5</p><p class="mono skill-card__empty">Reste a definir encore prcq aaaaaaaaaaa.</p></div></article>
+          <article class="skill-card skill-card--stack" aria-label="Sujet numéro sept"><button class="skill-card__tab mono" type="button">sujet n7</button><div class="skill-card__content"><p class="subject mono">sujet n7</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">5/5</p><p class="mono skill-card__empty">Reste a definir encore prcq aaaaaaaaaaa.</p></div></article>
+          <span class="panel-index mono">03 / 03</span>
+        </section>
+      </div>
+    </div>
+    <footer class="end-note mono">FELIPPE SOUSA <span>— FIN DE L’ARCHIVE —</span> <button type="button" data-go="home">RETOUR AU DÉBUT ↑</button></footer>
+  </main>
+
+  <div class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detail-title" aria-hidden="true" inert>
+    <div class="detail__top mono"><span id="detail-number">DOSSIER / 01</span><button class="detail__close" type="button" aria-label="Fermer le dossier">fermer ✕</button></div>
+    <div class="detail__body"><p class="subject mono">ARCHIVE / FELIPPE SOUSA</p><h2 id="detail-title">ANTRUM</h2><p id="detail-text" class="mono"></p><div class="detail__frame mono">VISUELS ET LIENS DU PROJET À AJOUTER</div></div>
+    <div class="detail__bottom mono">DÉFILER POUR EXPLORER / ÉCHAP POUR FERMER</div>
+  </div>
+</body>
+</html>
