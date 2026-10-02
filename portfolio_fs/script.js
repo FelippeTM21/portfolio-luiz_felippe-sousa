@@ -119,7 +119,10 @@ document.documentElement.classList.replace('no-js', 'js');
 
     // les 4 compétences en bas qui montent au scroll
     skillCards.forEach((card, index) => {
-      tl.to(card, {top: 0, duration: .8}, `skills+=${index * .8}`);
+      tl.fromTo(card, {
+        top: () => card.parentElement.clientHeight -
+          (skillCards.length - index) * parseFloat(getComputedStyle(skillButtons[index]).height)
+      }, {top: 0, duration: .8}, `skills+=${index * .8}`);
     });
 
     // pin pour garder le cadre a l'ecran et scrub pour lier au scroll?
@@ -139,7 +142,12 @@ document.documentElement.classList.replace('no-js', 'js');
   function buildMobileSkills() {
     // haut en bas et effets de fiches sur competences dans mobile
     const tl = gsap.timeline({defaults: {ease: 'none'}});
-    skillCards.forEach((card, index) => tl.to(card, {top: 0, duration: 1}, index));
+    skillCards.forEach((card, index) => {
+      tl.fromTo(card, {
+        top: () => card.parentElement.clientHeight -
+          (skillCards.length - index) * parseFloat(getComputedStyle(skillButtons[index]).height)
+      }, {top: 0, duration: 1}, index);
+    });
     mobileSkillTrigger = ScrollTrigger.create({
       trigger: '#skills',
       start: 'top top',
@@ -237,12 +245,12 @@ mm.add('(max-width: 760px)', () => {
     },
     contact: {
       number: 'CONTACT / FELIPPE SOUSA', title: 'CONTACT',
-      text: 'Les coordonnées seront ajoutées ici avant la mise en ligne publique du portfolio.',
-      frame: 'ADRESSE E-MAIL ET RÉSEAUX À AJOUTER'
+      text: 'Voici mes coordonnées, n\'hésitez pas à me contacter !',
+      frame: 'felippetm21@gmail.com'
     }
   };
 
-  // dossier arrive de la gauche (FONCTIONNE PAS)
+  // dossier arrive de la gauche 
   function openDetail(key) {
     const data = details[key];
     if (!data || detailOpen) return;
@@ -254,7 +262,7 @@ mm.add('(max-width: 760px)', () => {
     detail.querySelector('.detail__frame').textContent = data.frame;
     detail.inert = false;
     detail.removeAttribute('aria-hidden');
-    gsap.set(detail, {visibility: 'visible', xPercent: -100});
+    gsap.set(detail, {visibility: 'visible', x: 0, xPercent: -100});
     document.documentElement.style.overflow = 'hidden';
     gsap.to(detail, {
       xPercent: 0, duration: .85, ease: 'power3.out',
@@ -289,6 +297,6 @@ mm.add('(max-width: 760px)', () => {
     }
   });
 
-  // Une fois les polices et les images chargées, on recalcule les distances.
+  
   window.addEventListener('load', () => ScrollTrigger.refresh(), {once: true});
 })();
