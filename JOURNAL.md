@@ -11,8 +11,65 @@ J'avais de la difficulté à trouver de l'inspiration pour débuter mon design m
 
 En observant les exemples de sites avec de bonnes animations j'ai appris comment elles sont fait et comment je pourrais peut être les intégrer dans mon site.
 
-## Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
+# PROMPTS IA
 
-Je l'ai uttilisé pour chercher des exemples de sites portfolios avec des concepts "proche" du miens et qui sont créatif et unique. Je m'inspire de quelques petits détails dans ces exemples. L'IA a aussi généré le text au début de mon design que j'ai modifié.
-Ex 1: https://atmozki.com
-Ex 2: https://www.reimake.com
+## 1. Intégration et fonctionnement de GSAP
+
+**Date : 28 septembre 2026**
+
+### Question
+
+> Comment intégrer GSAP dans un projet de portfolio utilisant HTML, CSS et JavaScript, et comment fonctionne GSAP?
+
+### Réponse
+
+
+![Réponse — GSAP](./assets/.png)
+
+---
+
+## 2. Création d'une animation de type « typewriter »
+
+**Date : 28 septembre 2026**
+
+### Question
+
+> Comment créer une animation de type « typewriter » qui démarre automatiquement lorsque l’utilisateur arrive sur mon site, dure environ trois secondes, puis effectue une transition fluide vers la page principale? Explique le code et sa logique.
+
+### Réponse
+
+
+![Réponse — Animation Typewriter](./assets/.png)
+
+---
+
+## 3. Création d'une section à défilement horizontal avec ScrollTrigger
+
+**Date : 30 septembre 2026**
+
+### Question
+
+> Comment intégrer ScrollTrigger afin que certaines parties de mon site se déplacent de gauche à droite plutôt que verticalement? Comment choisir une section qui se bloque afin de devenir une section à défilement horizontal? Explique le code et sa logique.
+
+### Réponse
+
+
+![Réponse — ScrollTrigger horizontal](./assets/.png)
+
+---
+
+## 4. Création de sections qui remontent et recouvrent la page précédente
+
+**Date : 30 septembre 2026**
+
+### Question
+
+> Comment faire en sorte que le défilement fasse remonter une nouvelle page déjà partiellement visible au bas de l’écran afin qu’elle recouvre progressivement toute la page actuelle? Explique le code et sa logique.
+
+### Réponse
+
+
+![Réponse — Sections superposées](./assets/.png)
+
+---
+
