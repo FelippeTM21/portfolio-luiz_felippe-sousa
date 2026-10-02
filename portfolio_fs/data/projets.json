@@ -1,0 +1,44 @@
+[
+  {
+    "id": "antrum",
+    "title": "ANTRUM",
+    "category": "COURT MÉTRAGE",
+    "subtitle": "Une fiction inquiétante mêlant stop motion, image VHS et found footage.",
+    "description": "Court métrage inspiré de l’analog horror et de Don’t Hug Me I’m Scared. Stop motion, image VHS et found footage se rejoignent dans un univers faussement innocent. Ce projet à été présenté sous forme d'installation à quatre écrans dans un grand studio.",
+    "year": "",
+    "image": "assets/images/ANTRUM.png",
+    "imageAlt": "",
+    "link": "https://youtu.be/o2H41IhFS_s",
+    "video": "",
+    "illustrationClass": "project-card__image--antrum",
+    "frame": ""
+  },
+  {
+    "id": "toucher-mort",
+    "title": "LE TOUCHÉ DE LA MORT",
+    "category": "COURT MÉTRAGE",
+    "subtitle": "De troublantes images plongées dans le corps et l'âme d'un personnage troublé.",
+    "description": "Court métrage dans le thème du corps et la violence 100% réalisé avec un objectif macro. Projet réalisé dans le cadre d'un cours de vidéo.",
+    "year": "",
+    "image": "assets/images/toucher_de_la_mort_2.png",
+    "imageAlt": "",
+    "link": "https://youtu.be/0lBrBwj5XlA",
+    "video": "",
+    "illustrationClass": "project-card__image--pending",
+    "frame": ""
+  },
+  {
+    "id": "am-fm",
+    "title": "AM/FM",
+    "category": "PERFOMANCE AUDIOVISUELLE",
+    "subtitle": "Une immersion audiovisuelle profonde dans la solitude et la folie, inspirée par le film 'The Lighthouse'",
+    "description": "Une performance audiovisuelle immersive inspirée par le film 'The Lighthouse'. Le projet explore la solitude et la folie réalisé dans un mélange de 3D, effets visuels et une ambiance sonore pesante. Le tout est manipulé en temps réel.",
+    "year": "",
+    "image": "assets/images/AM-FM.png",
+    "imageAlt": "",
+    "link": "https://youtu.be/l9vIgSR0jGA",
+    "video": "",
+    "illustrationClass": "project-card__image--pending",
+    "frame": ""
+  }
+]

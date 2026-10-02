@@ -61,8 +61,8 @@
                 <div class="evidence-slot evidence-slot--fingerprint"><img src="assets/images/empreinte.png"></div>
               </div>
               <div class="about__text mono">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at hendrerit tortor. Donec id tempus magna. Etiam eget tellus efficitur.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at hendrerit tortor. Donec id tempus.</p>
+                <p>Je suis Luiz Felippe Avelino Sousa, artiste multimédia basée à Montréal et présentement élève en intégration multimédia au Collège Montmorency.</p>
+                <p>Mon objectif est de mettre en valeur ma créativité et mes idées à travers des créations multimédias qui mettent à l'épreuve mes compétences. Évoluer dans le milieu en réalisant des projets qui cherchent à se démarquer et à s'améliorer sans cesse.</p>
                 <div class="about__links">
                   <button class="line-button" type="button" data-go="projects"><span>voir les <em>projets</em></span><span class="arrow" aria-hidden="true"></span></button>
                   <button class="line-button" type="button" data-go="skills"><span>mes <em>compétences</em></span><span class="arrow" aria-hidden="true"></span></button>
@@ -77,25 +77,20 @@
         <section class="panel projects" id="projects" aria-labelledby="projects-title">
           <div class="projects__inner" id="projects-inner">
             <p class="subject mono">sujet n2</p>
-            <h2 id="projects-title"><span>PROJETS</h2>
-            <p class="projects__count mono">ARCHIVE / 03 DOSSIERS</p>
-            <div class="project-list">
+            <h2 id="projects-title"><span>PROJETS</span></h2>
+            <p class="projects__count mono">ARCHIVE / CHARGEMENT</p>
+            <p id="projects-status" class="mono" role="status">Chargement des projets…</p>
+            <div class="project-list" id="project-list" aria-busy="true"></div>
+            <noscript><p class="mono">Active JavaScript pour afficher les projets.</p></noscript>
+
+            <!-- template projets json -->
+            <template id="project-template">
               <article class="project-card">
-                <div class="project-card__image project-card__image--antrum"><img class="project-card__photo" src="assets/images/ANTRUM.png"></div>
-                <div class="project-card__info"><p class="mono project-card__number">01 / COURT MÉTRAGE</p><h3>ANTRUM</h3><p class="mono">Une fiction inquiétante mêlant stop motion, image VHS et found footage.</p></div>
-                <button class="line-button mono" type="button" data-open="antrum"><span>voir le projet</span><span class="arrow" aria-hidden="true"></span></button>
+                <div class="project-card__image"><img class="project-card__photo" alt=""></div>
+                <div class="project-card__info"><p class="mono project-card__number"></p><h3></h3><p class="mono" data-project-subtitle></p></div>
+                <button class="line-button mono" type="button" data-open=""><span>voir le projet</span><span class="arrow" aria-hidden="true"></span></button>
               </article>
-              <article class="project-card">
-                <div class="project-card__image project-card__image--pending"><img class="project-card__photo" src="assets/images/projet_non_specifier.png"></div>
-                <div class="project-card__info"><p class="mono project-card__number">02 / DOSSIER À COMPLÉTER</p><h3>PROJET 02</h3><p class="mono">> Lorem ipsum dolor sit amet.> Lorem ipsum dolor sit amet.> Lorem ipsum</p></div>
-                <button class="line-button mono" type="button" data-open="project-02"><span>voir le projet</span><span class="arrow" aria-hidden="true"></span></button>
-              </article>
-              <article class="project-card">
-                <div class="project-card__image project-card__image--pending"><img class="project-card__photo" src="assets/images/projet_non_specifier.png"></div>
-                <div class="project-card__info"><p class="mono project-card__number">03 / DOSSIER À COMPLÉTER</p><h3>PROJET 03</h3><p class="mono">> Lorem ipsum dolor sit amet.> Lorem ipsum dolor sit amet.> Lorem ipsum</p></div>
-                <button class="line-button mono" type="button" data-open="project-03"><span>voir le projet</span><span class="arrow" aria-hidden="true"></span></button>
-              </article>
-            </div>
+            </template>
             <p class="projects__end mono">FIN DES DOSSIERS / DÉFILER POUR LES COMPÉTENCES ↓</p>
           </div>
           <span class="panel-index mono">02 / 03</span>
@@ -105,13 +100,45 @@
           <article class="skill-card skill-card--base" aria-labelledby="video-title">
             <div class="skill-card__content">
               <p class="subject mono">sujet n3</p><h2 id="video-title">VIDEO</h2><p class="skill-card__fraction">1/5</p>
-              <div class="skill-card__grid"><div class="skill-image"><img class="skill-image__photo" src="assets/images/projet_non_specifier.png"></div><p class="mono skill-card__desc">Reste a definir encore prcq aaaaaaaaaaa.</p></div>
+              <div class="skill-card__grid"><div class="skill-image"><img class="skill-image__photo" src="assets/images/DaVinci_Resolve_Studio.png"></div><p class="mono skill-card__desc">>Cadrage et composition de l’image <br>>Prise de vue et mouvements de caméra<br>>Éclairage et création d’ambiances<br>>Scénarisation et storyboard<br>>Mise en scène et réalisation<br>>Montage vidéo, rythme et narration<br>>Correction des couleurs et étalonnage</p></div>
             </div>
           </article>
-          <article class="skill-card skill-card--stack" aria-label="Sujet numéro quatre"><button class="skill-card__tab mono" type="button">sujet n4</button><div class="skill-card__content"><p class="subject mono">sujet n4</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">2/5</p><p class="mono skill-card__empty">Reste a definir encore prcq aaaaaaaaaaa.</p></div></article>
-          <article class="skill-card skill-card--stack" aria-label="Sujet numéro cinq"><button class="skill-card__tab mono" type="button">sujet n5</button><div class="skill-card__content"><p class="subject mono">sujet n5</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">3/5</p><p class="mono skill-card__empty">Reste a definir encore prcq aaaaaaaaaaa.</p></div></article>
-          <article class="skill-card skill-card--stack" aria-label="Sujet numéro six"><button class="skill-card__tab mono" type="button">sujet n6</button><div class="skill-card__content"><p class="subject mono">sujet n6</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">4/5</p><p class="mono skill-card__empty">Reste a definir encore prcq aaaaaaaaaaa.</p></div></article>
-          <article class="skill-card skill-card--stack" aria-label="Sujet numéro sept"><button class="skill-card__tab mono" type="button">sujet n7</button><div class="skill-card__content"><p class="subject mono">sujet n7</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">5/5</p><p class="mono skill-card__empty">Reste a definir encore prcq aaaaaaaaaaa.</p></div></article>
+          <article class="skill-card skill-card--stack" aria-label="Sujet numéro quatre">
+            <button class="skill-card__tab mono" type="button">sujet n4</button>
+            <div class="skill-card__content">
+              <p class="subject mono">sujet n4</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">2/5</p>
+              <div class="skill-card__grid">
+                <div class="skill-image"><img class="skill-image__photo" src="assets/images/touchdesigner.png"></div>
+                <p class="mono skill-card__desc">>Création de visuels réactifs au son<br>>Conception d’expériences immersives et interactives<br>>Animation et effets visuels en temps réel<br>>Traitement d’images et de vidéos<br>>Création et animation de particules</p></div>
+            </div>
+          </article>
+          <article class="skill-card skill-card--stack" aria-label="Sujet numéro cinq">
+            <button class="skill-card__tab mono" type="button">sujet n5</button>
+            <div class="skill-card__content">
+              <p class="subject mono">sujet n5</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">3/5</p>
+              <div class="skill-card__grid">
+                <div class="skill-image"><img class="skill-image__photo" src="assets/images/blender.png"></div>
+                <p class="mono skill-card__desc">>Modélisation d’objets et d’environnements 3D<br>>Création de matériaux et de textures<br>>Éclairage et composition de scènes<br>>Animation d’objets et de caméras<br>>Rendu d’images et de séquences animées</p></div>
+            </div>
+          </article>
+          <article class="skill-card skill-card--stack" aria-label="Sujet numéro six">
+            <button class="skill-card__tab mono" type="button">sujet n6</button>
+            <div class="skill-card__content">
+              <p class="subject mono">sujet n6</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">4/5</p>
+              <div class="skill-card__grid">
+                <div class="skill-image"><img class="skill-image__photo" src="assets/images/flstudio.png"></div>
+                <p class="mono skill-card__desc">>Conception sonore et création de textures<br>>Échantillonnage et manipulation audio<br>>Composition et production musicale<br>Création de rythmes et de mélodies<br>>Arrangement musical et création d’ambiances sonores</p></div>
+            </div>
+          </article>
+          <article class="skill-card skill-card--stack" aria-label="Sujet numéro sept">
+            <button class="skill-card__tab mono" type="button">sujet n7</button>
+            <div class="skill-card__content">
+              <p class="subject mono">sujet n7</p><h2>À DÉFINIR</h2><p class="skill-card__fraction">5/5</p>
+              <div class="skill-card__grid">
+                <div class="skill-image"><img class="skill-image__photo" src="assets/images/vscode.png" ></div>
+                <p class="mono skill-card__desc">>Intégration de maquettes en HTML et CSS<br>>Programmation d’interactions en JavaScript<br>>Adaptation des interfaces aux différentes tailles d’écran<br>>Animation et effets de défilement avec GSAP<br>>Chargement et affichage de contenus à partir de JSON</p></div>
+            </div>
+          </article>
           <span class="panel-index mono">03 / 03</span>
         </section>
       </div>
@@ -121,8 +148,23 @@
 
   <div class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detail-title" aria-hidden="true" inert>
     <div class="detail__top mono"><span id="detail-number">DOSSIER / 01</span><button class="detail__close" type="button" aria-label="Fermer le dossier">fermer ✕</button></div>
-    <div class="detail__body"><p class="subject mono">ARCHIVE / FELIPPE SOUSA</p><h2 id="detail-title">ANTRUM</h2><p id="detail-text" class="mono"></p><div class="detail__frame mono">VISUELS ET LIENS DU PROJET À AJOUTER</div></div>
-    <div class="detail__bottom mono">DÉFILER POUR EXPLORER / ÉCHAP POUR FERMER</div>
+    <div class="detail__body">
+      <p class="subject mono">ARCHIVE / FELIPPE SOUSA</p>
+      <h2 id="detail-title"></h2>
+      <p id="detail-meta" class="detail__meta mono" hidden></p>
+      <p id="detail-text" class="mono"></p>
+      <p id="detail-link-block" class="detail__link-block mono" hidden><a id="detail-link" class="detail__link" target="_blank" rel="noopener noreferrer">ouvrir le projet ↗</a></p>
+      <div class="detail__frame mono">
+        <p id="detail-frame-text">VISUELS ET LIENS DU PROJET À AJOUTER</p>
+        <video id="detail-video" class="detail__video" controls playsinline preload="metadata" hidden>
+          Ton navigateur ne peut pas afficher ce lecteur vidéo.
+        </video>
+        <iframe id="detail-youtube" class="detail__youtube" title="Vidéo YouTube du projet"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+      </div>
+    </div>
+    <div class="detail__bottom mono" tabindex="0">DÉFILER POUR EXPLORER / ÉCHAP POUR FERMER</div>
   </div>
 </body>
 </html>

@@ -547,37 +547,9 @@ a {
   text-shadow: 2px 3px 3px #000;
 }
 
-/* Cette ancienne capture est recadrée uniquement tant que tu ne l’as pas remplacée. */
-.project-card__photo[src$="a-remplacer--antrum.png"] {
-  inset: auto;
-  left: -1228px;
-  top: -116px;
-  width: 1928px;
-  height: 565px;
-  max-width: none;
-  object-fit: fill;
-}
-
 .project-card__image--antrum small {
   font: .6rem var(--mono);
   letter-spacing: .05em;
-}
-
-/* La mention temporaire disparaît automatiquement quand le src change. */
-.asset-note {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  display: none;
-  padding: .45rem .65rem;
-  background: rgba(214,210,198,.97);
-  border-top: 1px solid var(--ink);
-  color: var(--ink);
-  font-size: clamp(.68rem,.85vw,.8rem);
-  line-height: 1.35;
-  text-align: left;
 }
 
 .project-card__photo[src$="a-remplacer--antrum.png"]~.asset-note,.skill-image__photo[src$="a-remplacer--video.png"]~.asset-note {
@@ -620,8 +592,8 @@ a {
   font-size: .78rem;
 }
 
-/* Compétences : les vrais bords des fiches restent visibles en bas. */
-/* ===== 08 — Compétences et image vidéo ===== */
+/* les vrais bords des fiches restent visibles en bas. */
+/* compétences et image vidéo */
 .skills {
   isolation: isolate;
 }
@@ -644,7 +616,7 @@ a {
   box-shadow: 0 -4px 12px #0001;
 }
 
-/* 12, 9, 6 et 3 rem : les 4 onglets sont déjà là avant de défiler. */
+/* les 4 onglets sont déjà là avant de défiler. */
 .skill-card--stack:nth-of-type(2) {
   top: calc(100% - 12rem);
   z-index: 2;
@@ -735,16 +707,6 @@ a {
   object-fit: cover;
 }
 
-/* Même idée pour la capture vidéo : ton vrai fichier prend toute la case automatiquement. */
-.skill-image__photo[src$="a-remplacer--video.png"] {
-  inset: auto;
-  left: -244px;
-  top: -320px;
-  width: 1251px;
-  height: 898px;
-  max-width: none;
-  object-fit: fill;
-}
 
 .skill-card__desc,.skill-card__empty {
   font-size: clamp(1rem,1.4vw,1.2rem);
@@ -761,7 +723,7 @@ a {
   pointer-events: none;
 }
 
-/* ===== 09 — Pied de page ===== */
+/* footer */
 .end-note {
   min-height: 32svh;
   padding: 5rem 8%;
@@ -780,8 +742,7 @@ a {
   font: inherit;
 }
 
-/* Les dossiers s’ouvrent au-dessus de tout ; script.js gère le clavier. */
-/* ===== 10 — Dossiers plein écran ===== */
+/* dossiers plein ecran*/
 .detail {
   position: fixed;
   inset: 0;
@@ -838,7 +799,61 @@ a {
   font-size: .85rem;
 }
 
-/* ===== 11 — Mode sans GSAP / animations réduites ===== */
+/* video garde ses proportions */
+.detail__frame--video {
+  height: auto;
+  padding: 0;
+  background: #000;
+}
+
+.detail__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 75svh;
+  object-fit: contain;
+}
+
+/* lecteur YouTube dans le même cadre */
+.detail__youtube {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
+  max-height: 75svh;
+  border: 0;
+  background: #000;
+}
+
+.detail__video[hidden],.detail__youtube[hidden] {
+  display: none;
+}
+
+/* json */
+.detail__meta {
+  margin-bottom: 1.5rem;
+  font-size: .83rem;
+}
+
+#detail-text {
+  white-space: pre-line;
+}
+
+.detail__link-block {
+  margin-top: 1.5rem;
+}
+
+.detail__link {
+  display: inline-block;
+  border: 1px solid currentColor;
+  padding: .55rem .8rem;
+  color: inherit;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+/* mode sans gsap */
 .no-js .stage,.no-gsap .stage {
   height: auto;
 }
@@ -867,7 +882,7 @@ a {
   min-height: 110svh;
 }
 
-/* Lecture normale si GSAP est absent ou si les animations sont réduites. */
+/* lecture normale si GSAP est absent ou si les animations sont réduites */
 .no-gsap .skills,.no-js .skills {
   height: auto;
   min-height: 0;
@@ -889,7 +904,7 @@ a {
   padding: 3rem 0 5rem;
 }
 
-/* ===== 12 — Téléphone et tablette (760 px et moins) ===== */
+/* phone tablette et moins */
 @media(max-width:760px) {
   :root {
     --tab: 2.65rem;
@@ -1009,7 +1024,7 @@ a {
     overflow: hidden;
   }
 
-  /* Les quatre onglets tiennent dans la hauteur du téléphone. */
+  /* les quatre onglets tiennent dans la hauteur du téléphone. */
   .skill-card--stack:nth-of-type(2) { top: calc(100% - 10.6rem); }
   .skill-card--stack:nth-of-type(3) { top: calc(100% - 7.95rem); }
   .skill-card--stack:nth-of-type(4) { top: calc(100% - 5.3rem); }
@@ -1070,7 +1085,7 @@ a {
 
 }
 
-/* ===== 13 — Petits téléphones (480 px et moins) ===== */
+/* petits telephones */
 @media(max-width:480px) {
   .about__grid {
     grid-template-columns: 1fr;
@@ -1117,7 +1132,7 @@ a {
 
 }
 
-/* ===== 14 — Préférence de mouvement réduit ===== */
+/* reduced motion preference */
 @media(prefers-reduced-motion:reduce) {
   html {
     scroll-behavior: auto;
