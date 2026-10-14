@@ -7,7 +7,7 @@
     "description": "Court métrage inspiré de l’analog horror et de Don’t Hug Me I’m Scared. Stop motion, image VHS et found footage se rejoignent dans un univers faussement innocent. Ce projet à été présenté sous forme d'installation à quatre écrans dans un grand studio.",
     "year": "",
     "image": "assets/images/ANTRUM.png",
-    "imageAlt": "",
+    "imageAlt": "Aperçu du projet ANTRUM",
     "link": "https://youtu.be/o2H41IhFS_s",
     "video": "",
     "illustrationClass": "project-card__image--antrum",
@@ -41,7 +41,10 @@
         "largeur": 2559,
         "hauteur": 1376
       }
-    ]
+    ],
+    "role": "Concepteur sonore, monteur, cameraman et éclairagiste.",
+    "logiciels": "Dragonframe, DaVinci Resolve, FL Studio.",
+    "techniques": "Stop-motion, prise de vue, éclairage et installation à quatre écrans."
   },
   {
     "id": "toucher-mort",
@@ -51,11 +54,14 @@
     "description": "Court métrage dans le thème du corps et la violence 100% réalisé avec un objectif macro. Projet réalisé dans le cadre d'un cours de vidéo.",
     "year": "",
     "image": "assets/images/toucher_de_la_mort_2.png",
-    "imageAlt": "",
+    "imageAlt": "Aperçu du projet LE TOUCHÉ DE LA MORT",
     "link": "https://youtu.be/0lBrBwj5XlA",
     "video": "",
     "illustrationClass": "project-card__image--pending",
-    "frame": ""
+    "frame": "",
+    "role": "Cameraman, monteur et concepteur audio.",
+    "logiciels": "DaVinci Resolve.",
+    "techniques": "Prise de vue macro, montage vidéo et création de la bande sonore."
   },
   {
     "id": "am-fm",
@@ -65,10 +71,30 @@
     "description": "Une performance audiovisuelle immersive inspirée par le film 'The Lighthouse'. Le projet explore la solitude et la folie réalisé dans un mélange de 3D, effets visuels et une ambiance sonore pesante. Le tout est manipulé en temps réel.",
     "year": "",
     "image": "assets/images/AM-FM.png",
-    "imageAlt": "",
+    "imageAlt": "Aperçu du projet AM/FM",
     "link": "https://youtu.be/l9vIgSR0jGA",
     "video": "",
     "illustrationClass": "project-card__image--pending",
-    "frame": ""
+    "frame": "",
+    "role": "Direction artistique, animation, montage et conception sonore.",
+    "logiciels": "Max, Reaper, Maya, DaVinci Resolve, TouchDesigner.",
+    "techniques": "Environnement 3D et traitement audiovisuel en temps réel."
+  },
+  {
+    "id": "portfolio-web",
+    "title": "PORTFOLIO WEB",
+    "category": "SITE INTERACTIF",
+    "subtitle": "Une archive personnelle animée, entre vidéo, son et création numérique.",
+    "description": "Conception de ce portfolio à partir de mes maquettes : navigation horizontale, fiches de compétences et dossiers de projets alimentés par un fichier JSON.",
+    "year": "",
+    "image": "assets/images/portfolio-web.svg",
+    "imageAlt": "Illustration de l’identité visuelle du portfolio : fond beige et violet, titre Portfolio.",
+    "link": "",
+    "video": "",
+    "illustrationClass": "",
+    "frame": "",
+    "role": "Direction visuelle, conception des maquettes et personnalisation du site.",
+    "logiciels": "VS Code, HTML, CSS, JavaScript, GSAP et ScrollTrigger.",
+    "techniques": "Mise en page responsive, animations au défilement, données JSON et intégration de vidéos YouTube."
   }
 ]

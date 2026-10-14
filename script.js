@@ -175,6 +175,35 @@ document.documentElement.classList.replace('no-js', 'js');
     }
   }
 
+  // On garde les onglets en bas, mais on lit toute la fiche avant de passer à la suivante.
+  function ajouterCompetences(tl) {
+    const cards = [...document.querySelectorAll('.skill-card')];
+    cards.forEach((card, index) => {
+      const content = card.querySelector('.skill-card__content');
+      const clip = content.parentElement;
+      const remaining = cards.length - index - 1;
+      clip.style.bottom = `calc(${remaining} * var(--tab))`;
+      if (index > 0) {
+        tl.fromTo(card, {
+          top: () => card.parentElement.clientHeight - (cards.length - index) * skillButtons[index - 1].offsetHeight
+        }, {top: 0, duration: .8});
+      }
+      tl.addLabel('skill-' + index);
+      // Si le laptop est bas, le contenu monte dans sa fenêtre, sans couper le texte.
+      const distance = Math.max(0, content.scrollHeight - clip.clientHeight);
+      if (distance > 0) {
+        tl.to(content, {y: () => -Math.max(0, content.scrollHeight - clip.clientHeight), duration: distance / window.innerHeight});
+      }
+      tl.addLabel('skill-end-' + index);
+    });
+  }
+
+  document.querySelectorAll('.skill-card__content').forEach(content => {
+    const clip = document.createElement('div');
+    clip.className = 'skill-card__viewport';
+    content.before(clip); clip.append(content);
+  });
+
   function buildDesktop() {
     const vw = () => window.innerWidth;
     const vh = () => window.innerHeight;
@@ -185,8 +214,13 @@ document.documentElement.classList.replace('no-js', 'js');
     const tl = gsap.timeline({defaults: {ease: 'none'}});
     tl.addLabel('home', 0)
       .to(track, {x: () => -vw(), duration: 1})
-      .addLabel('about')
-      .to(track, {x: () => -2 * vw(), duration: 1})
+      .addLabel('about');
+    const aboutDistance = Math.max(0, document.querySelector('.about__body').scrollHeight - vh() + 32);
+    // Pas de scroll à vide : on descend seulement si le contenu dépasse.
+    if (aboutDistance > 0) {
+      tl.to('.about__body', {y: () => -Math.max(0, document.querySelector('.about__body').scrollHeight - vh() + 32), duration: aboutDistance / vh()});
+    }
+    tl.to(track, {x: () => -2 * vw(), duration: 1})
       .addLabel('projects')
       // reste et descends dans projets
       .to(projectInner, {
@@ -196,13 +230,9 @@ document.documentElement.classList.replace('no-js', 'js');
       .to(track, {x: () => -3 * vw(), duration: 1})
       .addLabel('skills');
 
+
     // les 4 compétences en bas qui montent au scroll
-    skillCards.forEach((card, index) => {
-      tl.fromTo(card, {
-        top: () => card.parentElement.clientHeight -
-          (skillCards.length - index) * parseFloat(getComputedStyle(skillButtons[index]).height)
-      }, {top: 0, duration: .8}, `skills+=${index * .8}`);
-    });
+    ajouterCompetences(tl);
 
     // pin pour garder le cadre a l'ecran et scrub pour lier au scroll?
     scrollTrigger = ScrollTrigger.create({
@@ -221,16 +251,11 @@ document.documentElement.classList.replace('no-js', 'js');
   function buildMobileSkills() {
     // haut en bas et effets de fiches sur competences dans mobile
     const tl = gsap.timeline({defaults: {ease: 'none'}});
-    skillCards.forEach((card, index) => {
-      tl.fromTo(card, {
-        top: () => card.parentElement.clientHeight -
-          (skillCards.length - index) * parseFloat(getComputedStyle(skillButtons[index]).height)
-      }, {top: 0, duration: 1}, index);
-    });
+    ajouterCompetences(tl);
     mobileSkillTrigger = ScrollTrigger.create({
       trigger: '#skills',
       start: 'top top',
-      end: () => '+=' + (skillCards.length * window.innerHeight),
+      end: () => '+=' + (tl.duration() * window.innerHeight),
       animation: tl,
       pin: true,
       scrub: .65,
@@ -253,7 +278,7 @@ mm.add('(min-width: 761px)', () => {
   return () => {
     timeline = null;
     scrollTrigger = null;
-    gsap.set([track, projectInner, ...skillCards], { clearProps: 'all' });
+    gsap.set([track, projectInner, ...skillCards, ...document.querySelectorAll('.skill-card__content, .about__body')], { clearProps: 'all' });
   };
 });
 
@@ -264,12 +289,24 @@ mm.add('(max-width: 760px)', () => {
   // desktop clear positions mobile
   return () => {
     mobileSkillTrigger = null;
-    gsap.set(skillCards, { clearProps: 'all' });
+    gsap.set([...skillCards, ...document.querySelectorAll('.skill-card__content')], { clearProps: 'all' });
   };
 });
 
+  // On recalcule les distances utiles si la fenêtre change de taille.
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => gsap.matchMediaRefresh(), 180);
+  });
+
   // les boutons vont au bon endroit "moment"
   function goTo(name) {
+    // Sur mobile, viser le début du pin évite de revenir à la dernière fiche.
+    if (name === 'skills' && mobileSkillTrigger) {
+      window.scrollTo({top: mobileSkillTrigger.start + 1, behavior: reduced.matches ? 'instant' : 'smooth'});
+      return;
+    }
     if (scrollTrigger && timeline?.labels[name] !== undefined) {
       const progress = timeline.labels[name] / timeline.duration();
       window.scrollTo({
@@ -297,9 +334,7 @@ mm.add('(max-width: 760px)', () => {
     button.addEventListener('click', () => {
       const trigger = scrollTrigger || mobileSkillTrigger;
       if (!trigger) return;
-      const targetTime = scrollTrigger
-        ? timeline.labels.skills + (index + 1) * .8
-        : index + 1;
+      const targetTime = trigger.animation.labels['skill-' + (index + 1)];
       window.scrollTo({
         top: trigger.start + targetTime / trigger.animation.duration()
           * (trigger.end - trigger.start) + 2,
@@ -329,6 +364,9 @@ mm.add('(max-width: 760px)', () => {
       link: projet.link || '',
       video: projet.video || '',
       image: projet.image,
+      role: projet.role || '',
+      logiciels: projet.logiciels || '',
+      techniques: projet.techniques || '',
       // PROCESSUS creatif
       processus: projet.id === 'antrum' && Array.isArray(projet.processus) ? projet.processus : []
     };
@@ -381,7 +419,7 @@ mm.add('(max-width: 760px)', () => {
       texte.textContent = etape.texte;
       bloc.append(texte);
 
-      // Le chemin vient du JSON. L'image garde ses proportions et se charge au besoin.
+      // le chemin vient du JSON, l'image garde ses proportions et se charge au besoin
       const chemin = typeof etape.image === 'string' ? lienProjet(etape.image) : '';
       if (chemin) {
         const image = document.createElement('img');
@@ -410,6 +448,25 @@ mm.add('(max-width: 760px)', () => {
     detail.querySelector('#detail-text').textContent = data.text;
     detailFrameText.textContent = data.frame;
     afficherProcessus(data.processus);
+    // Les infos viennent du JSON
+    const facts = detail.querySelector('#detail-facts');
+    facts.replaceChildren();
+    [['Mon rôle', data.role], ['Logiciels', data.logiciels], ['Techniques', data.techniques]].forEach(([label, value]) => {
+      if (!value) return;
+      const dt = document.createElement('dt');
+      const dd = document.createElement('dd');
+      dt.textContent = label; dd.textContent = value;
+      facts.append(dt, dd);
+    });
+    const preview = detail.querySelector('#detail-preview');
+    preview.hidden = key !== 'portfolio-web' || !data.image;
+    if (!preview.hidden) {
+      preview.querySelector('img').src = data.image;
+      preview.querySelector('img').alt = 'Aperçu du projet ' + data.title;
+    } else {
+      preview.querySelector('img').removeAttribute('src');
+    }
+
 
     // lecteur video du projet dans json qui prend la place du cadre
     const video = lienProjet(data.video);
@@ -422,6 +479,7 @@ mm.add('(max-width: 760px)', () => {
     detailYoutube.hidden = !youtube;
     detailFrameText.hidden = aUneVideo;
     detailFrame.classList.toggle('detail__frame--video', aUneVideo);
+    detailFrame.hidden = !aUneVideo && key !== 'contact';
     detailVideo.removeAttribute('poster');
     if (youtube) {
       detailYoutube.title = 'Vidéo du projet ' + data.title;
