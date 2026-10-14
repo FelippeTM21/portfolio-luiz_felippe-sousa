@@ -11,7 +11,37 @@
     "link": "https://youtu.be/o2H41IhFS_s",
     "video": "",
     "illustrationClass": "project-card__image--antrum",
-    "frame": ""
+    "frame": "",
+    "processus": [
+      {
+        "texte": "Mon projet Antrum a débuté après une session de brainstorming avec mon équipe. Nous voulions créer une œuvre originale inspirée par le genre « analog horror » et l'œuvre Don't Hug Me I'm Scared : un univers inquiétant qui se cachait derrière une présentation « innocente ».",
+        "image": "images/antrum_tournage3.jpg",
+        "imageAlt": "Décor de cuisine d’ANTRUM et caméra installée pour le tournage.",
+        "largeur": 3023,
+        "hauteur": 4031
+      },
+      {
+        "texte": "Notre défi principal était de créer un contraste cohérent entre nos séquences stop-motion et notre séquence vidéo normale qui puisse générer la peur. On a jumelé un style VHS avec le genre du « found footage » pour créer un tout cohérent et inquiétant.",
+        "image": "images/antrum_tournage2.jpg",
+        "imageAlt": "Écran de la caméra montrant une interprète pendant le tournage d’ANTRUM.",
+        "largeur": 3023,
+        "hauteur": 4031
+      },
+      {
+        "texte": "Notre décor était notamment très important. Nous avons créé de toutes pièces un décor avec les ressources à notre disposition afin de créer notre ambiance et notre univers.",
+        "image": "images/antrum_tournage1.jpg",
+        "imageAlt": "Fabrication du décor d’ANTRUM dans le studio.",
+        "largeur": 3024,
+        "hauteur": 4032
+      },
+      {
+        "texte": "On a fini par faire un travail énorme au niveau de ce qu'on voulait raconter. On a réfléchi aux moindres détails de chaque scène, plan et élément du décor. On a organisé notre tournage sur trois jours. Tout était préparé parfaitement d'avance, ce qui a fait que notre tournage s'est déroulé de manière fluide, mais aussi efficace.",
+        "image": "images/antrum_instal.png",
+        "imageAlt": "Installation finale d’ANTRUM avec trois projections et un téléviseur.",
+        "largeur": 2559,
+        "hauteur": 1376
+      }
+    ]
   },
   {
     "id": "toucher-mort",

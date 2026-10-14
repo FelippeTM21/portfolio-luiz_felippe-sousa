@@ -830,6 +830,45 @@ a {
   display: none;
 }
 
+/* processus de création dans le dossier ANTRUM */
+.detail__processus {
+  margin-top: clamp(3rem, 7svh, 5rem);
+  padding-top: 2rem;
+  border-top: 1px solid currentColor;
+}
+
+.detail__processus[hidden] {
+  display: none;
+}
+
+.detail__processus h3 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.detail__processus-etapes {
+  display: grid;
+  gap: clamp(2.5rem, 6svh, 4.5rem);
+}
+
+.detail__processus-etape p {
+  font-size: clamp(.95rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.detail__processus-etape img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 85svh;
+  margin: 1.5rem auto 0;
+  border: 1px solid currentColor;
+}
+
 /* json */
 .detail__meta {
   margin-bottom: 1.5rem;

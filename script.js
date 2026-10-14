@@ -15,9 +15,11 @@ document.documentElement.classList.replace('no-js', 'js');
   const detailYoutube = detail.querySelector('#detail-youtube');
   const detailFrame = detail.querySelector('.detail__frame');
   const detailFrameText = detail.querySelector('#detail-frame-text');
+  const detailProcessus = detail.querySelector('#detail-processus');
+  const detailEtapes = detail.querySelector('#detail-processus-etapes');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // On charge les projets pendant que l'intro se joue.
+  // charge les projets pendant que l'intro se joue
   const projetsPrets = chargerProjets();
 
   let timeline = null;
@@ -326,11 +328,12 @@ mm.add('(max-width: 760px)', () => {
       year: projet.year || '',
       link: projet.link || '',
       video: projet.video || '',
-      image: projet.image
+      image: projet.image,
+      // PROCESSUS creatif
+      processus: projet.id === 'antrum' && Array.isArray(projet.processus) ? projet.processus : []
     };
   });
 
-  // Un lien vide reste caché. On accepte les liens web et les chemins vers tes fichiers.
   function lienProjet(valeur) {
     if (!valeur || !valeur.trim() || valeur.trim() === '#') return '';
     try {
@@ -341,7 +344,7 @@ mm.add('(max-width: 760px)', () => {
     }
   }
 
-  // On transforme le lien YouTube normal en lien pour le lecteur intégré.
+  // transforme le lien YouTube normal en lien pour le lecteur intégré
   function lienYoutube(valeur) {
     if (!valeur) return '';
     try {
@@ -364,6 +367,38 @@ mm.add('(max-width: 760px)', () => {
     }
   }
 
+  // vide le contenu à chaque ouverture pour ne pas le laisser dans les autres projets
+  function afficherProcessus(etapes = []) {
+    detailEtapes.replaceChildren();
+    detailProcessus.hidden = true;
+
+    etapes.forEach(etape => {
+      if (!etape || typeof etape.texte !== 'string') return;
+      const bloc = document.createElement('div');
+      bloc.className = 'detail__processus-etape';
+      const texte = document.createElement('p');
+      texte.className = 'mono';
+      texte.textContent = etape.texte;
+      bloc.append(texte);
+
+      // Le chemin vient du JSON. L'image garde ses proportions et se charge au besoin.
+      const chemin = typeof etape.image === 'string' ? lienProjet(etape.image) : '';
+      if (chemin) {
+        const image = document.createElement('img');
+        image.src = chemin;
+        image.alt = typeof etape.imageAlt === 'string' ? etape.imageAlt : '';
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        if (Number.isInteger(etape.largeur) && etape.largeur > 0) image.width = etape.largeur;
+        if (Number.isInteger(etape.hauteur) && etape.hauteur > 0) image.height = etape.hauteur;
+        bloc.append(image);
+      }
+      detailEtapes.append(bloc);
+    });
+
+    detailProcessus.hidden = detailEtapes.childElementCount === 0;
+  }
+
   // dossier arrive de la gauche 
   function openDetail(key) {
     const data = details[key];
@@ -374,6 +409,7 @@ mm.add('(max-width: 760px)', () => {
     detail.querySelector('#detail-title').textContent = data.title;
     detail.querySelector('#detail-text').textContent = data.text;
     detailFrameText.textContent = data.frame;
+    afficherProcessus(data.processus);
 
     // lecteur video du projet dans json qui prend la place du cadre
     const video = lienProjet(data.video);
